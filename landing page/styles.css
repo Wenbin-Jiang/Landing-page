@@ -1,316 +1,154 @@
-/* Common styles */
 body {
-  font-family: Arial, sans-serif; /* Set the font family for the entire document */
-  margin: 0; /* Remove default margin */
-  padding: 0; /* Remove default padding */
+  background-image: url(./pics/marvel.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
 }
-
-/* Style for the header */
-.header {
-  background-color: white; /* Background color for the header */
-  padding: 20px; /* Padding around the header content */
-  display: flex; /* Use flexbox for layout */
-  justify-content: space-between; /* Align items to the start and end */
-  align-items: center; /* Center items vertically */
-}
-
-/* Style for the heading */
-.header h1 {
-  color: black; /* Text color for the heading */
-  font-size: 3em; /* Font size for the heading */
-  margin: 0; /* Remove default margin */
-}
-
-/* Style for the navigation */
-nav {
-  margin-top: 10px; /* Margin space above the navigation */
-}
-
-/* Style for the navigation links */
-nav ul {
-  list-style: none; /* Remove bullet points from the list */
-  padding: 0; /* Remove default padding */
-  margin: 0; /* Remove default margin */
-  display: flex; /* Use flexbox for layout */
-}
-
-nav ul li {
-  margin-right: 20px; /* Margin space between list items */
-}
-
-nav ul li:last-child {
-  margin-right: 0; /* Remove margin from the last list item */
-}
-
-nav ul li a {
-  color: black; /* Text color for the navigation links */
-  text-decoration: none; /* Remove underline from the links */
-  font-size: 2em; /* Font size for the navigation links */
-}
-
-nav ul li a:hover {
-  text-decoration: underline; /* Add underline on hover */
-}
-
-/* main page background photo */
-.background-image {
+/* Login Container */
+#login-container {
+  background-color: rgba(255, 255, 255, 0.6);
   width: 100%;
-  height: 85vh; /* 85% of the viewport height */
-  background-image: url("./photos/main1.webp"); /* Path to your image */
-  background-size: cover; /* Scale the background image to cover the entire element */
-  background-position: center; /* Center the background image */
-  display: flex; /* Use flexbox for layout */
-  flex-direction: column; /* Arrange items vertically */
-  justify-content: flex-end; /* Align items to the bottom */
-  align-items: center; /* Center items horizontally */
-  animation: animateBlur 6s alternate; /* Apply background animation */
+  max-width: 25vw;
+  max-height: 60vh;
+  margin: 150px auto 0;
+  border-radius: 50px;
+  padding: 50px;
 }
 
-@keyframes animateBlur {
-  0% {
-    filter: blur(10px); /* Start with a blur of 10 pixels */
-  }
-  100% {
-    filter: blur(0px); /* End with no blur */
-  }
+/* Login Input Fields */
+#login-container input[type="text"],
+#login-container input[type="password"] {
+  font-size: 50px;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
 }
 
-.background-image h1,
-.background-image p {
-  color: white; /* Text color for the heading and paragraph */
-  font-size: 5em; /* Font size for the heading and paragraph */
+/* Login Button */
+#login-container button {
+  font-size: 50px;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  transition: background-color 0.3s;
 }
 
-/* Style for the intro text */
-#intro {
-  background-color: #ebebec; /* Background color for the intro section */
-  display: flex; /* Use flexbox for layout */
-  justify-content: center; /* Center content horizontally */
-  align-items: center; /* Center content vertically */
-  height: 15vh; /* Height of the intro section */
+/* Hover Styles for Login Button */
+#login-container button:hover {
+  background-color: #0056b3;
 }
 
-.intro-text {
-  text-align: center; /* Center text within the container */
+/* Error Message */
+#error-message {
+  font-size: 50px;
+  color: red;
+  margin-top: 10px;
+  text-align: center;
 }
 
-.intro-text h1 {
-  font-size: 4em; /* Font size for the heading */
-  color: #53585b; /* Text color for the heading */
-  margin-bottom: 80px; /* Adjust spacing between elements */
+/* App Container */
+.app {
+  background-color: rgba(255, 255, 255, 0.6);
+  width: 100%;
+  max-width: 50vw;
+  max-height: 70vh;
+  margin: 150px auto 0;
+  border-radius: 50px;
+  padding: 50px;
 }
 
-.intro-text p {
-  font-size: 2.5em; /* Font size for the paragraph */
-  color: #53585b; /* Text color for the paragraph */
+/* Quiz Title */
+.app h1 {
+  font-size: 50px;
+  color: black;
+  font-weight: 600;
+  border-bottom: 10px solid #333;
+  padding-bottom: 30px;
+  text-align: center;
 }
 
-/* Style for the main content */
-#main {
-  background-color: #f0f0f0; /* Background color for the main content */
+/* Question Title */
+.quiz h2 {
+  font-size: 40px;
+  color: black;
+  font-weight: 600;
 }
 
-/* Style for the provider section */
-#providers {
-  background-color: #f0f0f0; /* Background color for the provider section */
+/* Progress Bar */
+#progress-bar {
+  width: 100%;
+  background-color: blue;
+  height: 50px;
+  border-radius: 10px;
 }
 
-.content {
-  display: flex; /* Use flexbox for layout */
-  flex: 1; /* Take up remaining space */
+/* Inner Progress Bar */
+#progress-bar-inner {
+  width: 0%;
+  height: 100%;
+  background-color: #4caf50;
+  border-radius: 20px;
+  transition: width 0.3s ease-in-out;
 }
 
-/* Style for photo container */
-.photo {
-  flex: 1; /* Take up 50% of the width */
-  margin: 0; /* Remove any default margins */
-  padding: 0; /* Remove any default padding */
+/* Answer Buttons */
+.btn {
+  background: aliceblue;
+  color: #222;
+  font-size: 15px;
+  font-weight: 600;
+  width: 48%;
+  display: inline-block;
+  border: 5px solid #222;
+  padding: 10px;
+  margin: 10px 1%;
+  text-align: left;
+  border-radius: 20px;
+  transition: all 0.3s;
 }
 
-/* Style for photos */
-.photo img {
-  width: 100%; /* Ensure the image fills its container */
-  height: auto; /* Maintain aspect ratio */
-  opacity: 0; /* Initially set opacity to 0 */
-  animation: fadeIn 1s forwards; /* Apply fade-in animation */
+/* Hover Styles for Answer Buttons */
+.btn:hover:not([disabled]) {
+  background: #222;
+  color: #fff;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0; /* Start with opacity 0 */
-  }
-  to {
-    opacity: 1; /* End with opacity 1 */
-  }
+/* Disabled Styles for Answer Buttons */
+.btn:disabled {
+  cursor: no-drop;
 }
 
-/* Style for text container */
-.text {
-  flex: 1; /* Take up 50% of the width */
-  display: flex; /* Use flexbox for layout */
-  flex-direction: column; /* Arrange items vertically */
-  justify-content: center; /* Center content vertically */
-  align-items: center; /* Center content horizontally */
-  padding: 20px; /* Example padding */
+/* Next Button */
+#next-btn {
+  background: rgb(25, 121, 239);
+  color: #fff;
+  font-size: 30px;
+  font-weight: 600;
+  width: 200px;
+  border: none;
+  padding: 10px;
+  margin: 20px auto 0;
+  border-radius: 30px;
+  cursor: pointer;
+  display: none;
 }
 
-/* Style for text headings */
-.text h1 {
-  font-size: 4em; /* Font size for headings */
-  margin-bottom: 20px; /* Adjusted margin bottom */
-  padding: 10px; /* Example padding */
-  text-align: center; /* Center text horizontally */
+/* Correct Answers */
+.correct {
+  background: #3be307;
 }
 
-/* Style for text paragraphs */
-.text p {
-  font-size: 2em; /* Font size for paragraphs */
-  padding-left: 5%; /* Example padding */
-  color: black; /* Text color for paragraphs */
-}
-
-/* Hover effect */
-.hover-enlarge {
-  transition: transform 0.3s ease; /* Apply transition for smooth scaling */
-}
-
-.hover-enlarge:hover {
-  transform: scale(1.1); /* Enlarge the image by 10% on hover */
-}
-
-/* Learn more button */
-.learn -more {
-  background-color: #007bff; /* Background color for the button */
-  color: #fff; /* Text color for the button */
-  border: none; /* Remove border */
-  padding: 10px 20px; /* Padding for the button */
-  font-size: 25px; /* Font size for the button */
-  cursor: pointer; /* Change cursor to pointer on hover */
-  transition: background-color 0.3s ease; /* Apply transition for smooth color change */
-}
-
-.learn-more:hover {
-  background-color: #0056b3; /* Darken background color on hover */
-}
-
-/* Footer styles */
-footer {
-  background-color: #333; /* Background color for the footer */
-  color: #fff; /* Text color for the footer */
-  text-align: center; /* Center text horizontally */
-  padding: 20px; /* Padding for the footer */
-  font-size: 2em; /* Font size for the footer */
-}
-
-/* Media Queries */
-
-/* For desktop */
-@media only screen and (min-width: 1024px) {
-  header {
-    padding: 40px; /* Adjusted padding */
-  }
-
-  section {
-    padding: 100px 20%; /* Adjusted padding */
-  }
-
-  footer {
-    padding: 40px; /* Adjusted padding */
-  }
-}
-
-/* For iPad */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-  header {
-    padding: 30px; /* Adjusted padding */
-  }
-
-  section {
-    padding: 80px 10%; /* Adjusted padding */
-  }
-
-  footer {
-    padding: 30px; /* Adjusted padding */
-  }
-}
-
-/* For iPhone */
-@media only screen and (max-device-width: 767px) {
-  .header h1 {
-    font-size: 15px; /* Adjusted font size */
-  }
-
-  nav {
-    margin-left: auto; /* Align nav to the right */
-  }
-
-  nav ul li a {
-    font-size: 10px; /* Adjusted font size */
-    margin-right: 10px; /* Adjusted margin */
-  }
-
-  section {
-    padding: 60px 5%; /* Adjusted padding */
-  }
-
-  footer {
-    padding: 20px; /* Adjusted padding */
-  }
-
-  .background-image {
-    width: 100%; /* Adjusted width */
-    height: 33vh; /* Adjusted height */
-  }
-
-  .background-image h1,
-  .background-image p {
-    font-size: 30px; /* Adjusted font size */
-  }
-
-  .intro-text h1 {
-    font-size: 25px; /* Adjusted font size */
-    margin-bottom: 30px; /* Adjusted margin */
-  }
-
-  .intro-text p {
-    font-size: 20px; /* Adjusted font size */
-  }
-
-  .content {
-    flex-direction: column; /* Change layout to vertical */
-  }
-
-  .photo,
-  .text {
-    width: 100%; /* Take up full width */
-    height: 50%; /* Take up 50% of the height */
-    margin: 0; /* Remove any default margins */
-    padding: 0; /* Remove any default padding */
-  }
-
-  .text h1 {
-    font-size: 25px; /* Adjusted font size */
-    margin-bottom: 15px; /* Adjusted margin */
-    padding: 10px; /* Example padding */
-    text-align: center; /* Center text horizontally */
-  }
-
-  .text p {
-    font-size: 10px; /* Adjusted font size */
-    padding-left: 0; /* Remove left padding */
-    text-align: center; /* Center text horizontally */
-  }
-
-  .photo img {
-    width: 100%; /* Ensure the image fills its container */
-    height: auto; /* Maintain aspect ratio */
-  }
-
-  .learn-more {
-    background-color: #007bff; /* Background color for the button */
-    color: #fff; /* Text color for the button */
-    border: none; /* Remove border */
-    padding: 10px 20px; /* Padding for the button */
-    font-size: 10px; /* Adjusted font size */
-  }
+/* Incorrect Answers */
+.incorrect {
+  background: red;
 }
